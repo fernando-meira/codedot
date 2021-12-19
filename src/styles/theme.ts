@@ -35,6 +35,7 @@ export default {
       '100': '#f8f8f8',
       '200': '#EDF2F2', // Shape
       '300': '#DFDFDF',
+      '500': '#A8A8B3',
     },
 
     green: {

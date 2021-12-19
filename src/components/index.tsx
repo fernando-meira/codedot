@@ -1,7 +1,1 @@
-const Main = () => (
-  <div>
-    <h1>Hello World</h1>
-  </div>
-);
-
-export default Main;
+export { default as Header } from './Header';

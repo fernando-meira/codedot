@@ -41,10 +41,11 @@ export default createGlobalStyle`
     }
 
     body {
+      background: ${theme.colors.primary};
+      font-size: ${theme.font.sizes.medium};
       font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI',
         Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue',
         sans-serif;
-      font-size: ${theme.font.sizes.medium};
     }
   `}
 `;
