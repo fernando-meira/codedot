@@ -4,8 +4,8 @@ const defaultSpacing = '8rem';
 
 const anchorModifiers = {
   isActive: (theme: DefaultTheme) => css`
-    color: ${theme.colors.secondary};
     font-weight: ${theme.font.bold};
+    color: ${theme.colors.secondary};
 
     ::after {
       content: '';
