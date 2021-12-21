@@ -40,11 +40,15 @@ export const Content = styled.div`
     align-items: center;
     flex-direction: row;
 
-    nav {
-      height: ${defaultSpacing};
-      margin-left: ${defaultSpacing};
+    > button {
+      margin-left: auto;
     }
   `}
+`;
+
+export const Nav = styled.nav`
+  height: ${defaultSpacing};
+  margin-left: ${defaultSpacing};
 `;
 
 export const Anchor = styled.a<{ isActive?: boolean }>`
