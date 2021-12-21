@@ -13,11 +13,13 @@ export default function Header() {
         />
 
         <nav>
-          <S.Anchor isActive href="#">
+          <S.Anchor aria-label="Ir para a Home" isActive href="/Home">
             Home
           </S.Anchor>
 
-          <S.Anchor href="#">Posts</S.Anchor>
+          <S.Anchor aria-label="Ir para os posts" href="/Posts">
+            Posts
+          </S.Anchor>
         </nav>
       </S.Content>
     </S.Container>
