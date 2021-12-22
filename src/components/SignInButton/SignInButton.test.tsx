@@ -21,4 +21,14 @@ describe('<SignInButton />', () => {
       modifier: ':hover',
     });
   });
+
+  it('should leggedin button', () => {
+    renderWithTheme(<SignInButton isLoggedIn title="Fernando Meira" />);
+
+    expect(
+      screen.getByRole('button', {
+        name: 'Fernando Meira',
+      })
+    ).toBeInTheDocument();
+  });
 });
