@@ -1,5 +1,6 @@
 import * as S from './styles';
 import Image from 'next/image';
+
 import { SignInButton } from '..';
 
 export default function Header() {
@@ -23,7 +24,7 @@ export default function Header() {
           </S.Anchor>
         </S.Nav>
 
-        <SignInButton />
+        <SignInButton title="Fernando Meira" isLoggedIn />
       </S.Content>
     </S.Container>
   );

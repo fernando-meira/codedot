@@ -4,8 +4,8 @@ import { FaGithub } from 'react-icons/fa';
 import * as S from './styles';
 
 export type SignInButtonProps = {
-  title: string;
-  isLoggedIn: boolean;
+  title?: string;
+  isLoggedIn?: boolean;
 };
 
 export default function SignInButton({
