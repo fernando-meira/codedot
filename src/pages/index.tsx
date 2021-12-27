@@ -1,6 +1,6 @@
 import Head from 'next/head';
 
-import { Button, Header, Input } from '~/components';
+import { Button, Header, Input, Post } from '~/components';
 
 import * as S from '~/styles/pages/home.styles';
 
@@ -14,9 +14,9 @@ export default function Home() {
       <Header />
 
       <S.Section>
-        <S.MainMessage>
+        <S.FeedbackMessage>
           code. <span>- Never forget syntax again!</span>
-        </S.MainMessage>
+        </S.FeedbackMessage>
 
         <S.Title>
           Write, search, read
@@ -33,6 +33,14 @@ export default function Home() {
           <Button title="subscribe" />
         </S.SubscribeSection>
       </S.Section>
+
+      <S.PostsSection>
+        <S.FeedbackMessage>
+          Recent <span>blog posts</span>
+        </S.FeedbackMessage>
+
+        <Post />
+      </S.PostsSection>
     </S.Container>
   );
 }

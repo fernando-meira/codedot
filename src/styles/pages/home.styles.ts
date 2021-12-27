@@ -16,7 +16,7 @@ export const Section = styled.section`
   `}
 `;
 
-export const MainMessage = styled.h2`
+export const FeedbackMessage = styled.h2`
   ${({ theme }) => css`
     font-weight: ${theme.font.bold};
     color: ${theme.colors.secondary};
@@ -49,7 +49,7 @@ export const Subtitle = styled.h3`
   `}
 `;
 
-export const SubscribeSection = styled.div`
+export const SubscribeSection = styled.section`
   ${({ theme }) => css`
     width: 100%;
     max-width: 540px;
@@ -62,5 +62,13 @@ export const SubscribeSection = styled.div`
     ${ButtonStyles.Container} {
       margin-left: ${theme.spacings.xsmall};
     }
+  `}
+`;
+
+export const PostsSection = styled.section`
+  ${({ theme }) => css`
+    margin: 0 auto;
+    max-width: 112rem;
+    padding: 0 ${theme.spacings.small};
   `}
 `;
