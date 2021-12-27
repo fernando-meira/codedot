@@ -23,10 +23,7 @@ const anchorModifiers = {
 };
 
 export const Container = styled.div`
-  ${({ theme }) => css`
-    height: ${defaultSpacing};
-    border-bottom: 1px solid ${theme.colors.secondary};
-  `}
+  height: ${defaultSpacing};
 `;
 
 export const Content = styled.div`
