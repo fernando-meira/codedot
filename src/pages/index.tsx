@@ -13,7 +13,20 @@ export default function Home() {
 
       <Header />
 
-      <S.Section></S.Section>
+      <S.Section>
+        <S.MainMessage>
+          code. <span>- Never forget syntax again!</span>
+        </S.MainMessage>
+
+        <S.Title>
+          Write, search, read
+          <br /> and connect to studies!
+        </S.Title>
+
+        <S.Subtitle>
+          It's easy and free to post your ideas about your study topics.
+        </S.Subtitle>
+      </S.Section>
     </S.Container>
   );
 }
