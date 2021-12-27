@@ -17,7 +17,7 @@ const anchorModifiers = {
       bottom: 1px;
       border-radius: 3px 3px 0 0;
 
-      background: ${theme.colors.yellow[500]};
+      background: ${theme.colors.secondary};
     }
   `,
 };
