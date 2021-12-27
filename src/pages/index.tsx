@@ -28,7 +28,7 @@ export default function Home() {
         </S.Subtitle>
 
         <S.SubscribeSection>
-          <Input placeholder="Enter your email" />
+          <Input placeholder="Enter your email" type="email" />
 
           <Button title="subscribe" />
         </S.SubscribeSection>

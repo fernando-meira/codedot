@@ -1,6 +1,6 @@
 import styled, { css, DefaultTheme } from 'styled-components';
 
-const defaultSpacing = '6rem';
+const defaultSpacing = '8rem';
 
 const anchorModifiers = {
   isActive: (theme: DefaultTheme) => css`

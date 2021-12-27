@@ -4,8 +4,8 @@ export const Container = styled.button`
   ${({ theme }) => css`
     border: none;
     border-radius: 4.8rem;
+    height: ${theme.sizes.medium};
     padding: 0 ${theme.spacings.small};
-    height: ${theme.font.sizes.xxlarge};
 
     display: flex;
     align-items: center;
