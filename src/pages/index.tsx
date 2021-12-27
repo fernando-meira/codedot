@@ -10,9 +10,8 @@ export default function Home() {
       <Head>
         <title>codeDot</title>
       </Head>
-
+      read
       <Header />
-
       <S.Section>
         <S.MainMessage>
           code. <span>- Never forget syntax again!</span>
