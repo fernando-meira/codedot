@@ -1,6 +1,6 @@
 import styled, { css, DefaultTheme } from 'styled-components';
 
-const defaultSpacing = '8rem';
+const defaultSpacing = '6rem';
 
 const anchorModifiers = {
   isActive: (theme: DefaultTheme) => css`
@@ -14,7 +14,7 @@ const anchorModifiers = {
 
       width: 100%;
       height: 4px;
-      bottom: 1px;
+      bottom: 0px;
       border-radius: 3px 3px 0 0;
 
       background: ${theme.colors.secondary};
@@ -23,7 +23,10 @@ const anchorModifiers = {
 };
 
 export const Container = styled.div`
-  height: ${defaultSpacing};
+  ${({ theme }) => css`
+    height: ${defaultSpacing};
+    border-bottom: 1px solid ${theme.colors.gray[300]};
+  `}
 `;
 
 export const Content = styled.div`

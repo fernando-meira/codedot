@@ -1,5 +1,7 @@
 import styled, { css } from 'styled-components';
 
+import * as ButtonStyles from 'components/Button/styles';
+
 export const Container = styled.main``;
 
 export const Section = styled.section`
@@ -44,5 +46,21 @@ export const Subtitle = styled.h3`
     text-align: center;
     font-weight: ${theme.font.normal};
     font-size: ${theme.font.sizes.large};
+  `}
+`;
+
+export const SubscribeSection = styled.div`
+  ${({ theme }) => css`
+    width: 100%;
+    max-width: 540px;
+    margin-top: ${theme.spacings.medium};
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    ${ButtonStyles.Container} {
+      margin-left: ${theme.spacings.xsmall};
+    }
   `}
 `;

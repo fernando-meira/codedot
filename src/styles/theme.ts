@@ -68,4 +68,9 @@ export default {
     modal: 40,
     alwaysOnTop: 50,
   },
+  sizes: {
+    small: '2.8rem',
+    medium: '3.4rem',
+    large: '4.8rem',
+  },
 };
