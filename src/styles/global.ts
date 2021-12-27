@@ -25,6 +25,14 @@ export default createGlobalStyle`
     src: local(''),
       url('/fonts/poppins-v15-latin-600.woff2') format('woff2'),
   }
+  @font-face {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 900;
+    font-display: swap;
+    src: local(''),
+      url('/fonts/poppins-v15-latin-900.woff2') format('woff2'),
+  }
 
   * {
     margin:0;
