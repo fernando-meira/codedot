@@ -1,6 +1,6 @@
 import Head from 'next/head';
 
-import { Header } from '~/components';
+import { Button, Header, Input, Post } from '~/components';
 
 import * as S from '~/styles/pages/home.styles';
 
@@ -13,7 +13,34 @@ export default function Home() {
 
       <Header />
 
-      <S.Section></S.Section>
+      <S.Section>
+        <S.FeedbackMessage>
+          code. <span>- Never forget syntax again!</span>
+        </S.FeedbackMessage>
+
+        <S.Title>
+          Write, search, read
+          <br /> and connect to studies!
+        </S.Title>
+
+        <S.Subtitle>
+          {"It's easy and free to post your ideas about your study topics."}
+        </S.Subtitle>
+
+        <S.SubscribeSection>
+          <Input placeholder="Enter your email" type="email" />
+
+          <Button title="subscribe" />
+        </S.SubscribeSection>
+      </S.Section>
+
+      <S.PostsSection>
+        <S.FeedbackMessage>
+          Recent <span>blog posts</span>
+        </S.FeedbackMessage>
+
+        <Post />
+      </S.PostsSection>
     </S.Container>
   );
 }
