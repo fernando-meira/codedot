@@ -12,6 +12,7 @@ export default {
     light: 300,
     normal: 400,
     bold: 600,
+    black: 900,
     sizes: {
       xsmall: '1.2rem',
       small: '1.4rem',
@@ -19,6 +20,7 @@ export default {
       large: '1.8rem',
       xlarge: '2.0rem',
       xxlarge: '2.8rem',
+      biggest: '4.8rem',
     },
   },
   colors: {
@@ -65,5 +67,10 @@ export default {
     overlay: 30,
     modal: 40,
     alwaysOnTop: 50,
+  },
+  sizes: {
+    small: '2.8rem',
+    medium: '3.4rem',
+    large: '4.8rem',
   },
 };

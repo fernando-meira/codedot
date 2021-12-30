@@ -14,16 +14,19 @@ const anchorModifiers = {
 
       width: 100%;
       height: 4px;
-      bottom: 1px;
+      bottom: 0px;
       border-radius: 3px 3px 0 0;
 
-      background: ${theme.colors.yellow[500]};
+      background: ${theme.colors.secondary};
     }
   `,
 };
 
 export const Container = styled.div`
-  height: ${defaultSpacing};
+  ${({ theme }) => css`
+    height: ${defaultSpacing};
+    border-bottom: 1px solid ${theme.colors.gray[300]};
+  `}
 `;
 
 export const Content = styled.div`

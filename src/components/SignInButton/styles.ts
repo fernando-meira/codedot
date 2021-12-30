@@ -15,9 +15,9 @@ const buttonModifiers = {
 export const Container = styled.button<ButtonProps>`
   ${({ theme, isLoggedIn }) => css`
     border: none;
-    height: 4.8rem;
-    border-radius: 4.8rem;
+    height: ${theme.sizes.large};
     padding: 0 ${theme.spacings.small};
+    border-radius: ${theme.sizes.large};
 
     display: flex;
     align-items: center;
