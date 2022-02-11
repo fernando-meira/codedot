@@ -22,7 +22,7 @@ export default function StatusFooter({
 
     interval = setInterval(() => {
       setIsActive(false);
-    }, 5000);
+    }, 6000);
 
     return () => window.clearInterval(interval);
   }, [setIsActive]);
