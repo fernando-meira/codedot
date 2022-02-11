@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import Head from 'next/head';
 
 import { Button, Header, Input, Post, StatusFooter } from '~/components';
@@ -5,6 +6,8 @@ import { Button, Header, Input, Post, StatusFooter } from '~/components';
 import * as S from '~/styles/pages/home.styles';
 
 export default function Home() {
+  const [showStatus, setShowStatus] = useState(false);
+
   return (
     <S.Container>
       <Head>
@@ -30,7 +33,7 @@ export default function Home() {
         <S.SubscribeSection>
           <Input placeholder="Enter your email" type="email" />
 
-          <Button title="subscribe" />
+          <Button title="subscribe" onClick={() => setShowStatus(true)} />
         </S.SubscribeSection>
       </S.Section>
 
@@ -42,7 +45,11 @@ export default function Home() {
         <Post />
       </S.PostsSection>
 
-      <StatusFooter title="Código Pix copiado com sucesso!" />
+      <StatusFooter
+        isActive={showStatus}
+        setIsActive={setShowStatus}
+        title="Código Pix copiado com sucesso!"
+      />
     </S.Container>
   );
 }

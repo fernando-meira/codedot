@@ -1,12 +1,13 @@
 import * as S from './styles';
+import { ButtonHTMLAttributes } from 'react';
 
-export type ButtonProps = {
+interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   title: string;
-};
+}
 
-export default function Button({ title }: ButtonProps) {
+export default function Button({ title, ...rest }: ButtonProps) {
   return (
-    <S.Container type="button">
+    <S.Container type="button" {...rest}>
       <p>{title}</p>
     </S.Container>
   );
