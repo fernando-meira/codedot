@@ -6,6 +6,8 @@ export const Container = styled.main``;
 
 export const Section = styled.section`
   ${({ theme }) => css`
+    padding: 0 ${theme.spacings.small};
+
     max-width: 112rem;
     margin: ${theme.spacings.medium} auto;
 
@@ -36,6 +38,13 @@ export const Title = styled.h1`
     text-align: center;
     font-weight: ${theme.font.black};
     font-size: ${theme.font.sizes.biggest};
+
+    @media (max-width: 768px) {
+      margin-top: ${theme.spacings.small};
+
+      line-height: ${theme.spacings.medium};
+      font-size: ${theme.font.sizes.xxlarge};
+    }
   `}
 `;
 
