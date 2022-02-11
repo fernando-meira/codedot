@@ -1,6 +1,6 @@
 import Head from 'next/head';
 
-import { Button, Header, Input, Post } from '~/components';
+import { Button, Header, Input, Post, StatusFooter } from '~/components';
 
 import * as S from '~/styles/pages/home.styles';
 
@@ -41,6 +41,8 @@ export default function Home() {
 
         <Post />
       </S.PostsSection>
+
+      <StatusFooter title="Código Pix copiado com sucesso!" />
     </S.Container>
   );
 }

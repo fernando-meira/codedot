@@ -1,8 +1,6 @@
 import * as S from './styles';
 import Image from 'next/image';
 
-import { SignInButton } from '..';
-
 export default function Header() {
   return (
     <S.Container>
@@ -23,8 +21,6 @@ export default function Header() {
             Posts
           </S.Anchor>
         </S.Nav>
-
-        <SignInButton title="Fernando Meira" isLoggedIn />
       </S.Content>
     </S.Container>
   );

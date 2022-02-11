@@ -26,11 +26,16 @@ export const Container = styled.div`
   ${({ theme }) => css`
     height: ${defaultSpacing};
     border-bottom: 1px solid ${theme.colors.gray[300]};
+
+    @media (max-width: 768px) {
+      height: ${theme.spacings.xxlarge};
+    }
   `}
 `;
 
 export const Content = styled.div`
   ${({ theme }) => css`
+    width: 100%;
     height: 100%;
     margin: 0 auto;
     max-width: 112rem;
@@ -47,8 +52,15 @@ export const Content = styled.div`
 `;
 
 export const Nav = styled.nav`
-  height: ${defaultSpacing};
-  margin-left: ${defaultSpacing};
+  ${({ theme }) => css`
+    height: ${defaultSpacing};
+    margin-left: ${defaultSpacing};
+
+    @media (max-width: 768px) {
+      height: ${theme.spacings.xxlarge};
+      margin-left: ${theme.spacings.small};
+    }
+  `}
 `;
 
 export const Anchor = styled.a<{ isActive?: boolean }>`
@@ -71,6 +83,12 @@ export const Anchor = styled.a<{ isActive?: boolean }>`
 
     & + a {
       margin-left: ${theme.spacings.small};
+    }
+
+    @media (max-width: 768px) {
+      height: ${theme.spacings.xxlarge};
+
+      line-height: ${theme.spacings.xxlarge};
     }
 
     ${isActive && anchorModifiers.isActive(theme)};
