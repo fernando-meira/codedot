@@ -15,7 +15,7 @@ export function linkResolver(doc) {
     case 'post':
       return `/${doc.uid}`;
     case 'posts':
-      return `/${doc.uid}`;
+      return `/posts`;
     default:
       return null;
   }

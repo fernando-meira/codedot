@@ -1,66 +1,25 @@
 import Link from 'next/link';
+import { PostData } from '~/interfaces/Posts';
 
 import * as S from './styles';
 
-export default function Post() {
-  const posts = [
-    {
-      slug: 'Creating a Monorepo with Lerna & Yarn Workspaces',
-      updatedAt: '12 de março de 2021',
-      title: 'Creating a Monorepo with Lerna & Yarn Workspaces',
-      excerpt:
-        'In this guide, you will learn how to create a Monorepo to manage multiple packages with a shared build, test, and release process.',
-    },
-    {
-      slug: 'How Stripe Designs Beautiful Websites',
-      updatedAt: '11 de março de 2021',
-      title: 'How Stripe Designs Beautiful Websites',
-      excerpt:
-        "Examining the tips and tricks used to make tripe's website design a notch above the rest.",
-    },
-    {
-      slug: 'Creating a Monorepo with Lerna & Yarn Workspaces',
-      updatedAt: '12 de março de 2021',
-      title: 'Creating a Monorepo with Lerna & Yarn Workspaces',
-      excerpt:
-        'In this guide, you will learn how to create a Monorepo to manage multiple packages with a shared build, test, and release process.',
-    },
-    {
-      slug: 'How Stripe Designs Beautiful Websites',
-      updatedAt: '11 de março de 2021',
-      title: 'How Stripe Designs Beautiful Websites',
-      excerpt:
-        "Examining the tips and tricks used to make tripe's website design a notch above the rest.",
-    },
-    {
-      slug: 'Creating a Monorepo with Lerna & Yarn Workspaces',
-      updatedAt: '12 de março de 2021',
-      title: 'Creating a Monorepo with Lerna & Yarn Workspaces',
-      excerpt:
-        'In this guide, you will learn how to create a Monorepo to manage multiple packages with a shared build, test, and release process.',
-    },
-    {
-      slug: 'How Stripe Designs Beautiful Websites',
-      updatedAt: '11 de março de 2021',
-      title: 'How Stripe Designs Beautiful Websites',
-      excerpt:
-        "Examining the tips and tricks used to make tripe's website design a notch above the rest.",
-    },
-  ];
-
+export default function Post({
+  uid,
+  href,
+  first_publication_date,
+  data,
+}: PostData) {
   return (
     <S.Container>
-      {posts.map((post) => (
-        <Link key={post.slug} href={`/posts/${post.slug}`}>
-          <a>
-            <time>{post.updatedAt}</time>
+      <Link key={uid} href={`/posts/${href}`}>
+        <a>
+          <time>{first_publication_date}</time>
 
-            <strong>{post.title}</strong>
+          <strong>{data.title[0].text}</strong>
 
-            <p>{post.excerpt}</p>
-          </a>
-        </Link>
-      ))}
+          <p>{data.content[0].text}</p>
+        </a>
+      </Link>
     </S.Container>
   );
 }
