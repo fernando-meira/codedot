@@ -27,7 +27,7 @@ export default function Home() {
         </S.Title>
 
         <S.Subtitle>
-          {"It's easy and free to post your ideas about your study topics."}
+          "It's easy and free to post your ideas about your study topics."
         </S.Subtitle>
 
         <S.SubscribeSection>

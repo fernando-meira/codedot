@@ -2,7 +2,11 @@ import styled, { css } from 'styled-components';
 
 import * as ButtonStyles from 'components/Button/styles';
 
-export const Container = styled.main``;
+export const Container = styled.main`
+  position: relative;
+
+  padding: 8rem 0;
+`;
 
 export const Section = styled.section`
   ${({ theme }) => css`

@@ -24,8 +24,15 @@ const anchorModifiers = {
 
 export const Container = styled.div`
   ${({ theme }) => css`
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+
     height: ${defaultSpacing};
     border-bottom: 1px solid ${theme.colors.gray[300]};
+
+    backdrop-filter: blur(6px);
 
     @media (max-width: 768px) {
       height: ${theme.spacings.xxlarge};
