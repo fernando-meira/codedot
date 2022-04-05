@@ -1,13 +1,12 @@
-import { useState } from 'react';
 import Head from 'next/head';
+import { RichText } from 'prismic-dom';
 
-import { Button, Header, Input, Post, StatusFooter } from '~/components';
-
+import { createClient } from '~/../prismicio';
+import { PostsProps } from '~/interfaces/Posts';
 import * as S from '~/styles/pages/home.styles';
+import { Button, Header, Input, Post } from '~/components';
 
-export default function Home() {
-  const [showStatus, setShowStatus] = useState(false);
-
+export default function Home({ posts }: PostsProps) {
   return (
     <S.Container>
       <Head>
@@ -42,14 +41,42 @@ export default function Home() {
           Recent <span>blog posts</span>
         </S.FeedbackMessage>
 
-        <Post />
+        {posts.map((post) => (
+          <Post key={post.uid} post={post} />
+        ))}
       </S.PostsSection>
-
-      <StatusFooter
-        isActive={showStatus}
-        setIsActive={setShowStatus}
-        title="Código Pix copiado com sucesso!"
-      />
     </S.Container>
   );
+}
+
+export async function getServerSideProps({ previewData }) {
+  const client = createClient({ previewData });
+
+  const response = await client.getAllByType('post');
+
+  const posts = response
+    .filter((_, index) => index <= 2)
+    .map((post) => {
+      return {
+        uid: post.uid,
+        slug: post.slugs[0],
+        title: RichText.asText(post.data.title),
+        excerpt:
+          `${post.data.content
+            .find((content) => content.type === 'paragraph')
+            ?.text.substr(0, 295)}...` ?? '',
+        updatedAt: new Date(post.last_publication_date).toLocaleDateString(
+          'pt-BR',
+          {
+            day: '2-digit',
+            month: 'long',
+            year: 'numeric',
+          }
+        ),
+      };
+    });
+
+  return {
+    props: { posts },
+  };
 }

@@ -1,23 +1,23 @@
 import Link from 'next/link';
+
 import { PostData } from '~/interfaces/Posts';
 
 import * as S from './styles';
 
-export default function Post({
-  uid,
-  href,
-  first_publication_date,
-  data,
-}: PostData) {
+interface PostProps {
+  post: PostData;
+}
+
+export default function Post({ post }: PostProps) {
   return (
     <S.Container>
-      <Link key={uid} href={`/posts/${href}`}>
+      <Link key={post.uid} href={`/posts/${post.slug}`}>
         <a>
-          <time>{first_publication_date}</time>
+          <time>{post.updatedAt}</time>
 
-          <strong>{data.title[0].text}</strong>
+          <strong>{post.title}</strong>
 
-          <p>{data.content[0].text}</p>
+          {post.content ? <p>{post.content}</p> : <p>{post.excerpt}</p>}
         </a>
       </Link>
     </S.Container>

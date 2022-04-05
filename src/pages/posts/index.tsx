@@ -1,4 +1,5 @@
 import Head from 'next/head';
+import { RichText } from 'prismic-dom';
 import { createClient } from '../../../prismicio';
 
 import { Header, Post } from '~/components';
@@ -17,13 +18,7 @@ export default function Posts({ posts }: PostsProps) {
 
       <S.Content>
         {posts.map((post) => (
-          <Post
-            key={post.uid}
-            uid={post.uid}
-            href={post?.href}
-            first_publication_date={post.first_publication_date}
-            data={post.data}
-          />
+          <Post key={post.uid} post={post} />
         ))}
       </S.Content>
     </S.Container>
@@ -33,7 +28,28 @@ export default function Posts({ posts }: PostsProps) {
 export async function getServerSideProps({ previewData }) {
   const client = createClient({ previewData });
 
-  const posts = await client.getAllByType('post');
+  const response = await client.getAllByType('post');
+
+  const posts = response.map((post) => {
+    return {
+      uid: post.uid,
+      slug: post.slugs[0],
+      title: RichText.asText(post.data.title),
+      // content: RichText.asText(post.data.content),
+      excerpt:
+        `${post.data.content
+          .find((content) => content.type === 'paragraph')
+          ?.text.substr(0, 295)}...` ?? '',
+      updatedAt: new Date(post.last_publication_date).toLocaleDateString(
+        'pt-BR',
+        {
+          day: '2-digit',
+          month: 'long',
+          year: 'numeric',
+        }
+      ),
+    };
+  });
 
   return {
     props: { posts },
