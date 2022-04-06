@@ -32,7 +32,7 @@ export default function Home({ posts }: PostsProps) {
         <S.SubscribeSection>
           <Input placeholder="Enter your email" type="email" />
 
-          <Button title="subscribe" onClick={() => setShowStatus(true)} />
+          <Button title="subscribe" />
         </S.SubscribeSection>
       </S.Section>
 
