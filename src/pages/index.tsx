@@ -7,6 +7,7 @@ import * as S from '~/styles/pages/home.styles';
 import { Button, Header, Input, Post } from '~/components';
 
 export default function Home({ posts }: PostsProps) {
+  console.log('posts', posts);
   return (
     <S.Container>
       <Head>
@@ -26,7 +27,7 @@ export default function Home({ posts }: PostsProps) {
         </S.Title>
 
         <S.Subtitle>
-          "It's easy and free to post your ideas about your study topics."
+          {`"It's easy and free to post your ideas about your study topics."`}
         </S.Subtitle>
 
         <S.SubscribeSection>
