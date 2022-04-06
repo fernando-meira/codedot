@@ -1,6 +1,7 @@
 import * as S from './styles';
-import Link from 'next/link';
 import Image from 'next/image';
+
+import { ActiveLink } from '~/components';
 
 export default function Header() {
   return (
@@ -14,13 +15,13 @@ export default function Header() {
         />
 
         <S.Nav>
-          <Link aria-label="Ir para a Home" href="/">
+          <ActiveLink aria-label="Ir para a Home" href="/">
             <S.Anchor>Home</S.Anchor>
-          </Link>
+          </ActiveLink>
 
-          <Link aria-label="Ir para os posts" href="/posts" prefetch>
+          <ActiveLink aria-label="Ir para os posts" href="/posts" prefetch>
             <S.Anchor>Posts</S.Anchor>
-          </Link>
+          </ActiveLink>
         </S.Nav>
       </S.Content>
     </S.Container>
