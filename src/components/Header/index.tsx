@@ -1,4 +1,5 @@
 import * as S from './styles';
+import Link from 'next/link';
 import Image from 'next/image';
 
 export default function Header() {
@@ -13,13 +14,13 @@ export default function Header() {
         />
 
         <S.Nav>
-          <S.Anchor aria-label="Ir para a Home" isActive href="/">
-            Home
-          </S.Anchor>
+          <Link aria-label="Ir para a Home" href="/">
+            <S.Anchor>Home</S.Anchor>
+          </Link>
 
-          <S.Anchor aria-label="Ir para os posts" href="/posts">
-            Posts
-          </S.Anchor>
+          <Link aria-label="Ir para os posts" href="/posts">
+            <S.Anchor>Posts</S.Anchor>
+          </Link>
         </S.Nav>
       </S.Content>
     </S.Container>
