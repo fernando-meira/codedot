@@ -7,7 +7,6 @@ import * as S from '~/styles/pages/home.styles';
 import { Button, Header, Input, Post } from '~/components';
 
 export default function Home({ posts }: PostsProps) {
-  console.log('posts', posts);
   return (
     <S.Container>
       <Head>
