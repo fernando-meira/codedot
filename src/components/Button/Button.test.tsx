@@ -1,15 +1,12 @@
-import { render, screen } from '@testing-library/react';
+import { screen } from '@testing-library/react';
+import { renderWithTheme } from '~/utils/tests/helpers';
 
 import Button from '.';
 
 describe('<Button />', () => {
   it('should render the heading', () => {
-    const { container } = render(<Button />);
+    renderWithTheme(<Button title="button" />);
 
-    expect(
-      screen.getByRole('heading', {
-        name: /Button/i,
-      })
-    ).toBeInTheDocument();
+    expect(screen.getByRole('button', { name: /button/i })).toBeInTheDocument();
   });
 });
