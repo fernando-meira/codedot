@@ -4,7 +4,7 @@ import { RichText } from 'prismic-dom';
 import { createClient } from '~/../prismicio';
 import { PostsProps } from '~/interfaces/Posts';
 import * as S from '~/styles/pages/home.styles';
-import { Button, Header, Input, Post } from '~/components';
+import { Button, Header, Input, Post, SectionTitle } from '~/components';
 
 export default function Home({ posts }: PostsProps) {
   return (
@@ -16,9 +16,7 @@ export default function Home({ posts }: PostsProps) {
       <Header />
 
       <S.Section>
-        <S.FeedbackMessage>
-          code. <span>- Never forget syntax again!</span>
-        </S.FeedbackMessage>
+        <SectionTitle title="code." span="- Never forget syntax again!" />
 
         <S.Title>
           Write, search, read
@@ -37,9 +35,7 @@ export default function Home({ posts }: PostsProps) {
       </S.Section>
 
       <S.PostsSection>
-        <S.FeedbackMessage>
-          Recent <span>blog posts</span>
-        </S.FeedbackMessage>
+        <SectionTitle title="Recent" span="blog posts" />
 
         {posts.map((post) => (
           <Post key={post.uid} post={post} />

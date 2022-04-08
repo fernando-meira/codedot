@@ -22,18 +22,6 @@ export const Section = styled.section`
   `}
 `;
 
-export const FeedbackMessage = styled.h2`
-  ${({ theme }) => css`
-    font-weight: ${theme.font.bold};
-    color: ${theme.colors.secondary};
-    font-size: ${theme.font.sizes.xlarge};
-
-    span {
-      font-weight: ${theme.font.light};
-    }
-  `}
-`;
-
 export const Title = styled.h1`
   ${({ theme }) => css`
     margin-top: ${theme.spacings.medium};
