@@ -13,6 +13,11 @@ export default {
     normal: 400,
     bold: 600,
     black: 900,
+    letter: {
+      small: '0.2rem',
+      medium: '0.4rem',
+      large: '0.6rem',
+    },
     sizes: {
       xsmall: '1.2rem',
       small: '1.4rem',

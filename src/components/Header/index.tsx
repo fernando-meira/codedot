@@ -8,8 +8,8 @@ export default function Header() {
     <S.Container>
       <S.Content>
         <Image
-          width={80}
-          height={38}
+          width={70}
+          height={33.25}
           alt="codeDot logo"
           src="/images/logo.svg"
         />

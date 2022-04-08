@@ -32,7 +32,7 @@ export const Container = styled.div`
     height: ${defaultSpacing};
     border-bottom: 1px solid ${theme.colors.gray[300]};
 
-    backdrop-filter: blur(6px);
+    background: ${theme.colors.white};
 
     @media (max-width: 768px) {
       height: ${theme.spacings.xxlarge};
@@ -94,6 +94,7 @@ export const Anchor = styled.a<{ isActive?: boolean }>`
 
     @media (max-width: 768px) {
       height: ${theme.spacings.xxlarge};
+      padding: 0 ${theme.spacings.xxsmall};
 
       line-height: ${theme.spacings.xxlarge};
     }

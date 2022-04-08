@@ -1,6 +1,11 @@
+import Head from 'next/head';
 import { RichText } from 'prismic-dom';
 import { GetStaticPaths, GetStaticProps } from 'next';
+
+import { Header } from '~/components';
 import { createClient } from '~/../prismicio';
+
+import * as S from './slug.styles';
 
 interface Post {
   slug: string;
@@ -16,8 +21,27 @@ interface PostProps {
 const ONE_DAY = 1000 * 60 * 60 * 24;
 
 export default function Post({ post }: PostProps) {
-  console.log('post', post);
-  return <h1>Post</h1>;
+  return (
+    <>
+      <Head>
+        <title>{post.title}</title>
+      </Head>
+
+      <S.Container>
+        <Header />
+
+        <S.Section>
+          <S.Title>{post.title}</S.Title>
+
+          <S.DateText>{post.updatedAt}</S.DateText>
+
+          <S.Content
+            dangerouslySetInnerHTML={{ __html: String(post.content) }}
+          />
+        </S.Section>
+      </S.Container>
+    </>
+  );
 }
 
 export const getStaticPaths: GetStaticPaths<{ slug: string }> = async () => {
