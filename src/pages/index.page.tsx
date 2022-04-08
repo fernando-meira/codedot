@@ -10,7 +10,7 @@ export default function Home({ posts }: PostsProps) {
   return (
     <S.Container>
       <Head>
-        <title>codeDot</title>
+        <title>code .</title>
       </Head>
 
       <Header />

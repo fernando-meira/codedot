@@ -1,5 +1,5 @@
 import { RichText } from 'prismic-dom';
-import { GetServerSideProps } from 'next';
+import { GetStaticPaths, GetStaticProps } from 'next';
 import { createClient } from '~/../prismicio';
 
 interface Post {
@@ -13,12 +13,21 @@ interface PostProps {
   post: Post;
 }
 
+const ONE_DAY = 1000 * 60 * 60 * 24;
+
 export default function Post({ post }: PostProps) {
   console.log('post', post);
   return <h1>Post</h1>;
 }
 
-export const getServerSideProps: GetServerSideProps = async ({
+export const getStaticPaths: GetStaticPaths<{ slug: string }> = async () => {
+  return {
+    paths: [],
+    fallback: 'blocking',
+  };
+};
+
+export const getStaticProps: GetStaticProps = async ({
   params,
   previewData,
 }) => {
@@ -46,5 +55,6 @@ export const getServerSideProps: GetServerSideProps = async ({
     props: {
       post,
     },
+    revalidate: ONE_DAY,
   };
 };
