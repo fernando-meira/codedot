@@ -25,3 +25,13 @@ export function SectionTitle({ content }: CommonProps) {
 export function DateText({ children }: DateTextProps) {
   return <S.DateText>{children}</S.DateText>;
 }
+
+export function SummaryTitle({ content }: CommonProps) {
+  return (
+    <S.SummaryTitle dangerouslySetInnerHTML={{ __html: String(content) }} />
+  );
+}
+
+export function Summary({ content }: CommonProps) {
+  return <S.Summary dangerouslySetInnerHTML={{ __html: String(content) }} />;
+}

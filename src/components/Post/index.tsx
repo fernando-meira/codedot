@@ -1,6 +1,6 @@
 import Link from 'next/link';
 
-import { DateText } from '~/components';
+import { Summary, DateText, SummaryTitle } from '~/components';
 import { PostData } from '~/interfaces/Posts';
 
 import * as S from './styles';
@@ -16,9 +16,13 @@ export default function Post({ post }: PostProps) {
         <a>
           <DateText>{post.updatedAt}</DateText>
 
-          <strong>{post.title}</strong>
+          <SummaryTitle content={post.title} />
 
-          {post.content ? <p>{post.content}</p> : <p>{post.excerpt}</p>}
+          {post.content ? (
+            <Summary content={post.content} />
+          ) : (
+            <Summary content={post.excerpt} />
+          )}
         </a>
       </Link>
     </S.Container>

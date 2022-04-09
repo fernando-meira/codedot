@@ -40,22 +40,3 @@ export const DateText = styled.p`
     font-size: ${theme.font.sizes.small};
   `}
 `;
-
-export const Content = styled.div`
-  ${({ theme }) => css`
-    h1 {
-      margin-bottom: ${theme.spacings.large};
-
-      font-weight: ${theme.font.bold};
-      font-size: ${theme.font.sizes.xxlarge};
-    }
-
-    p {
-      margin-bottom: ${theme.spacings.medium};
-
-      font-size: ${theme.font.sizes.large};
-      line-height: ${theme.font.sizes.xxlarge};
-      letter-spacing: ${theme.font.letter.small};
-    }
-  `}
-`;

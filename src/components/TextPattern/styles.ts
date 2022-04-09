@@ -1,3 +1,4 @@
+import hexToRgba from 'hex-to-rgba';
 import styled, { css } from 'styled-components';
 
 export const Title = styled.h1`
@@ -47,5 +48,59 @@ export const DateText = styled.time`
 
     color: ${theme.colors.gray[500]};
     font-size: ${theme.font.sizes.medium};
+
+    @media (max-width: 768px) {
+      font-size: ${theme.font.sizes.small};
+    }
+  `}
+`;
+
+export const SummaryTitle = styled.h2`
+  ${({ theme }) => css`
+    margin-top: ${theme.spacings.xxsmall};
+
+    display: block;
+
+    line-height: 34px;
+    transition: color 0.4s;
+    color: ${theme.colors.secondary};
+    font-size: ${theme.font.sizes.xxlarge};
+
+    @media (max-width: 768px) {
+      margin-top: 0;
+
+      line-height: 24px;
+      font-size: ${theme.font.sizes.xlarge};
+    }
+
+    &:hover {
+      color: ${hexToRgba(theme.colors.secondary, 0.3)};
+    }
+  `}
+`;
+
+export const Summary = styled.p`
+  ${({ theme }) => css`
+    margin-top: ${theme.spacings.xxsmall};
+    margin-bottom: ${theme.spacings.medium};
+
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    text-overflow: ellipsis;
+    -webkit-box-orient: vertical;
+
+    text-align: justify;
+    line-height: 1.625rem;
+    color: ${theme.colors.black[500]};
+    font-size: ${theme.font.sizes.large};
+    line-height: ${theme.font.sizes.xxlarge};
+
+    @media (max-width: 768px) {
+      line-height: 20px;
+      -webkit-line-clamp: 3;
+
+      font-size: ${theme.font.sizes.medium};
+    }
   `}
 `;
