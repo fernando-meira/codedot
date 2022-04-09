@@ -26,12 +26,6 @@ export default function Home({ posts }: PostsProps) {
         <S.Subtitle>
           {`"It's easy and free to post your ideas about your study topics."`}
         </S.Subtitle>
-
-        <S.SubscribeSection>
-          <Input placeholder="Enter your email" type="email" />
-
-          <Button title="subscribe" />
-        </S.SubscribeSection>
       </S.Section>
 
       <S.PostsSection>
