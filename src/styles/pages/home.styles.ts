@@ -22,16 +22,6 @@ export const Section = styled.section`
   `}
 `;
 
-export const Subtitle = styled.h3`
-  ${({ theme }) => css`
-    margin-top: ${theme.spacings.medium};
-
-    text-align: center;
-    font-weight: ${theme.font.normal};
-    font-size: ${theme.font.sizes.large};
-  `}
-`;
-
 export const SubscribeSection = styled.section`
   ${({ theme }) => css`
     width: 100%;
