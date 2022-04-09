@@ -2,7 +2,7 @@ import Head from 'next/head';
 import { RichText } from 'prismic-dom';
 import { GetStaticPaths, GetStaticProps } from 'next';
 
-import { Header } from '~/components';
+import { Header, Title, Summary, DateText } from '~/components';
 import { createClient } from '~/../prismicio';
 
 import * as S from './slug.styles';
@@ -31,13 +31,15 @@ export default function Post({ post }: PostProps) {
         <Header />
 
         <S.Section>
-          <S.Title>{post.title}</S.Title>
+          <Title content={post.title} />
 
-          <S.DateText>{post.updatedAt}</S.DateText>
+          <S.ContentWrapper>
+            <DateText>{post.updatedAt}</DateText>
 
-          <S.Content
-            dangerouslySetInnerHTML={{ __html: String(post.content) }}
-          />
+            <S.Content
+              dangerouslySetInnerHTML={{ __html: String(post.content) }}
+            />
+          </S.ContentWrapper>
         </S.Section>
       </S.Container>
     </>

@@ -16,28 +16,17 @@ export const Section = styled.section`
 
     max-width: 112rem;
     margin: ${theme.spacings.medium} auto;
-  `}
-`;
-
-export const Title = styled.h1`
-  ${({ theme }) => css`
-    font-size: ${theme.font.sizes.biggest};
 
     @media (max-width: 768px) {
-      margin-top: ${theme.spacings.xlarge};
-
-      font-size: ${theme.font.sizes.xxlarge};
+      padding: 0 ${theme.spacings.xsmall};
+      margin: ${theme.spacings.xlarge} auto;
     }
   `}
 `;
 
-export const DateText = styled.p`
+export const ContentWrapper = styled.div`
   ${({ theme }) => css`
-    padding: ${theme.spacings.small} 0;
-
-    text-align: left;
-    color: ${theme.colors.gray[500]};
-    font-size: ${theme.font.sizes.small};
+    margin-top: ${theme.spacings.medium};
   `}
 `;
 
@@ -51,11 +40,17 @@ export const Content = styled.div`
     }
 
     p {
-      margin-bottom: ${theme.spacings.medium};
+      margin-top: ${theme.spacings.xxsmall};
 
+      text-align: justify;
+      line-height: 1.625rem;
+      color: ${theme.colors.black[500]};
       font-size: ${theme.font.sizes.large};
       line-height: ${theme.font.sizes.xxlarge};
-      letter-spacing: ${theme.font.letter.small};
+
+      @media (max-width: 768px) {
+        font-size: ${theme.font.sizes.medium};
+      }
     }
   `}
 `;
