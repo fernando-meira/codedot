@@ -4,7 +4,7 @@ import { RichText } from 'prismic-dom';
 import { createClient } from '~/../prismicio';
 import { PostsProps } from '~/interfaces/Posts';
 import * as S from '~/styles/pages/home.styles';
-import { Button, Header, Input, Post, SectionTitle } from '~/components';
+import { Header, Title, Post, SectionTitle } from '~/components';
 
 export default function Home({ posts }: PostsProps) {
   return (
@@ -18,10 +18,7 @@ export default function Home({ posts }: PostsProps) {
       <S.Section>
         <SectionTitle title="code." span="- Never forget syntax again!" />
 
-        <S.Title>
-          Write, search, read
-          <br /> and connect to studies!
-        </S.Title>
+        <Title content={'Write, search, read<br /> and connect to studies!'} />
 
         <S.Subtitle>
           {`"It's easy and free to post your ideas about your study topics."`}
