@@ -2,7 +2,7 @@ import Head from 'next/head';
 import { RichText } from 'prismic-dom';
 import { GetStaticPaths, GetStaticProps } from 'next';
 
-import { Header, Title, Summary, DateText } from '~/components';
+import { Header, Title, DateText } from '~/components';
 import { createClient } from '~/../prismicio';
 
 import * as S from './slug.styles';
@@ -18,7 +18,7 @@ interface PostProps {
   post: Post;
 }
 
-const ONE_DAY = 1000 * 60 * 60 * 24;
+const ONE_DAY = 60 * 60 * 24;
 
 export default function Post({ post }: PostProps) {
   return (
