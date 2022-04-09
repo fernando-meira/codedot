@@ -39,3 +39,13 @@ export const SectionTitle = styled.p`
     }
   `}
 `;
+
+export const DateText = styled.time`
+  ${({ theme }) => css`
+    display: flex;
+    align-items: center;
+
+    color: ${theme.colors.gray[500]};
+    font-size: ${theme.font.sizes.medium};
+  `}
+`;

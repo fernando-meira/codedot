@@ -1,5 +1,6 @@
 import Link from 'next/link';
 
+import { DateText } from '~/components';
 import { PostData } from '~/interfaces/Posts';
 
 import * as S from './styles';
@@ -13,7 +14,7 @@ export default function Post({ post }: PostProps) {
     <S.Container>
       <Link key={post.uid} href={`/posts/${post.slug}`}>
         <a>
-          <time>{post.updatedAt}</time>
+          <DateText>{post.updatedAt}</DateText>
 
           <strong>{post.title}</strong>
 

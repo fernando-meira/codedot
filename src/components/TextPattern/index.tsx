@@ -4,6 +4,10 @@ interface CommonProps {
   content: React.ReactNode;
 }
 
+interface DateTextProps {
+  children: Date | string;
+}
+
 export function Title({ content }: CommonProps) {
   return <S.Title dangerouslySetInnerHTML={{ __html: String(content) }} />;
 }
@@ -16,4 +20,8 @@ export function SectionTitle({ content }: CommonProps) {
   return (
     <S.SectionTitle dangerouslySetInnerHTML={{ __html: String(content) }} />
   );
+}
+
+export function DateText({ children }: DateTextProps) {
+  return <S.DateText>{children}</S.DateText>;
 }

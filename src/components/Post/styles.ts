@@ -15,14 +15,6 @@ export const Container = styled.div`
         border-top: 1px solid ${theme.colors.gray[300]};
       }
 
-      time {
-        display: flex;
-        align-items: center;
-
-        color: ${theme.colors.gray[500]};
-        font-size: ${theme.font.sizes.medium};
-      }
-
       strong {
         margin-top: ${theme.spacings.xxsmall};
 
