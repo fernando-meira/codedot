@@ -21,5 +21,9 @@ export const Content = styled.section`
     align-items: center;
     flex-direction: column;
     justify-content: center;
+
+    @media (max-width: 768px) {
+      padding: 0 ${theme.spacings.xsmall};
+    }
   `}
 `;

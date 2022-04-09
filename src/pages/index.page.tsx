@@ -28,7 +28,7 @@ export default function Home({ posts }: PostsProps) {
       </S.Section>
 
       <S.PostsSection>
-        <SectionTitle content={'Recent . <span> - blog posts<span>'} />
+        <SectionTitle content={'Recent <span> - blog posts<span>'} />
 
         {posts.map((post) => (
           <Post key={post.uid} post={post} />

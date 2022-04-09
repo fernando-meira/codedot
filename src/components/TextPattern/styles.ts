@@ -38,6 +38,10 @@ export const SectionTitle = styled.p`
     span {
       font-weight: ${theme.font.light};
     }
+
+    @media (max-width: 768px) {
+      text-align: center;
+    }
   `}
 `;
 
@@ -82,7 +86,6 @@ export const SummaryTitle = styled.h2`
 export const Summary = styled.p`
   ${({ theme }) => css`
     margin-top: ${theme.spacings.xxsmall};
-    margin-bottom: ${theme.spacings.medium};
 
     overflow: hidden;
     display: -webkit-box;

@@ -3,9 +3,15 @@ import styled, { css } from 'styled-components';
 import * as ButtonStyles from 'components/Button/styles';
 
 export const Container = styled.main`
-  position: relative;
+  ${({ theme }) => css`
+    position: relative;
 
-  padding: 8rem 0;
+    padding: 8rem 0;
+
+    @media (max-width: 768px) {
+      padding: ${theme.spacings.xlarge} 0;
+    }
+  `}
 `;
 
 export const Section = styled.section`
@@ -19,6 +25,10 @@ export const Section = styled.section`
     align-items: center;
     flex-direction: column;
     justify-content: center;
+
+    @media (max-width: 768px) {
+      padding: 0 ${theme.spacings.xsmall};
+    }
   `}
 `;
 
@@ -43,5 +53,9 @@ export const PostsSection = styled.section`
     margin: 0 auto;
     max-width: 112rem;
     padding: 0 ${theme.spacings.small};
+
+    @media (max-width: 768px) {
+      padding: 0 ${theme.spacings.xsmall};
+    }
   `}
 `;
