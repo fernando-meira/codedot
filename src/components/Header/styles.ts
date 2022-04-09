@@ -82,7 +82,7 @@ export const Anchor = styled.a<{ isActive?: boolean }>`
 
     text-decoration: none;
     transition: color 0.2s;
-    color: ${theme.colors.gray[500]};
+    color: ${theme.colors.black[500]};
 
     &:hover {
       color: ${theme.colors.gray[300]};
