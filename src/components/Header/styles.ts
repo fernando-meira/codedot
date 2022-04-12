@@ -80,6 +80,7 @@ export const Anchor = styled.a<{ isActive?: boolean }>`
 
     display: inline-block;
 
+    cursor: pointer;
     text-decoration: none;
     transition: color 0.2s;
     color: ${theme.colors.black[500]};
