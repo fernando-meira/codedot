@@ -30,7 +30,14 @@ export async function getServerSideProps({ previewData }) {
 
   const response = await client.getAllByType('post');
 
-  const posts = response.map((post) => {
+  const sortByNewest = response.sort(function (oldest, newest) {
+    return (
+      new Date(newest.first_publication_date).getDate() -
+      new Date(oldest.first_publication_date).getDate()
+    );
+  });
+
+  const posts = sortByNewest.map((post) => {
     return {
       uid: post.uid,
       slug: post.slugs[0],

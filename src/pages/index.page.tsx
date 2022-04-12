@@ -43,27 +43,32 @@ export async function getServerSideProps({ previewData }) {
 
   const response = await client.getAllByType('post');
 
-  const posts = response
-    .filter((_, index) => index <= 2)
-    .map((post) => {
-      return {
-        uid: post.uid,
-        slug: post.slugs[0],
-        title: RichText.asText(post.data.title),
-        excerpt:
-          `${post.data.content
-            .find((content) => content.type === 'paragraph')
-            ?.text.substr(0, 295)}...` ?? '',
-        updatedAt: new Date(post.last_publication_date).toLocaleDateString(
-          'pt-BR',
-          {
-            day: '2-digit',
-            month: 'long',
-            year: 'numeric',
-          }
-        ),
-      };
-    });
+  const sortByNewest = response.sort(function (oldest, newest) {
+    return (
+      new Date(newest.first_publication_date).getDate() -
+      new Date(oldest.first_publication_date).getDate()
+    );
+  });
+
+  const posts = sortByNewest.slice(0, 3).map((post) => {
+    return {
+      uid: post.uid,
+      slug: post.slugs[0],
+      title: RichText.asText(post.data.title),
+      excerpt:
+        `${post.data.content
+          .find((content) => content.type === 'paragraph')
+          ?.text.substr(0, 295)}...` ?? '',
+      updatedAt: new Date(post.last_publication_date).toLocaleDateString(
+        'pt-BR',
+        {
+          day: '2-digit',
+          month: 'long',
+          year: 'numeric',
+        }
+      ),
+    };
+  });
 
   return {
     props: { posts },
