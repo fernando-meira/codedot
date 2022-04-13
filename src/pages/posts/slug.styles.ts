@@ -52,5 +52,9 @@ export const Content = styled.div`
         font-size: ${theme.font.sizes.medium};
       }
     }
+
+    img {
+      max-width: 100%;
+    }
   `}
 `;
