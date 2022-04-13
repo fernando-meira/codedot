@@ -3,8 +3,8 @@ import Image from 'next/image';
 import { RichText } from 'prismic-dom';
 import { GetStaticPaths, GetStaticProps } from 'next';
 
-import { Header, Title, DateText } from '~/components';
 import { createClient } from '~/../prismicio';
+import { Header, Title, Banner, DateText } from '~/components';
 
 import * as S from './slug.styles';
 
@@ -38,20 +38,11 @@ export default function Post({ post }: PostProps) {
       </Head>
 
       <S.Container>
+        {post.image && <Banner title={post.title} image={post.image.url} />}
+
         <Header />
 
         <S.Section>
-          {post.image && (
-            <div>
-              <Image
-                src={post.image.url}
-                alt={post.image.alt}
-                width={post.image.dimensions.width}
-                height={post.image.dimensions.height}
-              />
-            </div>
-          )}
-
           <Title content={post.title} />
 
           <S.ContentWrapper>

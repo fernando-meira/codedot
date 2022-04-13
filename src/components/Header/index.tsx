@@ -19,7 +19,7 @@ export default function Header() {
             <S.Anchor>Home</S.Anchor>
           </ActiveLink>
 
-          <ActiveLink aria-label="Ir para os posts" href="/posts" prefetch>
+          <ActiveLink aria-label="Ir para os posts" href="/posts">
             <S.Anchor>Posts</S.Anchor>
           </ActiveLink>
         </S.Nav>

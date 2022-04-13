@@ -5,7 +5,7 @@ export const Container = styled.div`
     padding: 8rem 0;
 
     @media (max-width: 768px) {
-      padding: ${theme.spacings.small} 0;
+      padding: ${theme.spacings.xxlarge} 0;
     }
   `}
 `;
@@ -24,6 +24,19 @@ export const Section = styled.section`
   `}
 `;
 
+export const BannerWrapper = styled.div`
+  ${({ theme }) => css`
+    margin: 0 auto;
+    min-width: 60rem;
+    max-width: 128rem;
+    padding: 0 ${theme.spacings.large};
+
+    @media (max-width: 768px) {
+      min-width: 0;
+    }
+  `}
+`;
+
 export const ContentWrapper = styled.div`
   ${({ theme }) => css`
     margin-top: ${theme.spacings.medium};
@@ -37,6 +50,20 @@ export const Content = styled.div`
 
       font-weight: ${theme.font.bold};
       font-size: ${theme.font.sizes.xxlarge};
+    }
+
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      margin-top: ${theme.spacings.medium};
+    }
+
+    a {
+      cursor: pointer;
+      text-decoration: none;
+      color: ${theme.colors.black[100]};
     }
 
     p {
