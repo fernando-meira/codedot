@@ -46,7 +46,7 @@ export const ContentWrapper = styled.div`
 export const Content = styled.div`
   ${({ theme }) => css`
     h1 {
-      margin-bottom: ${theme.spacings.large};
+      margin: ${theme.spacings.large} 0;
 
       font-weight: ${theme.font.bold};
       font-size: ${theme.font.sizes.xxlarge};
@@ -57,7 +57,7 @@ export const Content = styled.div`
     h4,
     h5,
     h6 {
-      margin-top: ${theme.spacings.medium};
+      margin-top: ${theme.spacings.large};
     }
 
     a {
@@ -67,7 +67,7 @@ export const Content = styled.div`
     }
 
     p {
-      margin-top: ${theme.spacings.xxsmall};
+      margin-bottom: ${theme.spacings.small};
 
       text-align: justify;
       line-height: 1.625rem;
@@ -82,6 +82,18 @@ export const Content = styled.div`
 
     img {
       max-width: 100%;
+    }
+
+    div {
+      width: 100%;
+    }
+
+    iframe {
+      height: auto;
+      width: inherit;
+      margin-top: ${theme.spacings.medium};
+
+      aspect-ratio: 16 / 9;
     }
   `}
 `;

@@ -5,7 +5,7 @@ export const Title = styled.h1`
   ${({ theme }) => css`
     margin-top: ${theme.spacings.medium};
 
-    line-height: 40px;
+    line-height: 6rem;
     text-align: center;
     font-weight: ${theme.font.black};
     font-size: ${theme.font.sizes.biggest};
