@@ -1,18 +1,24 @@
-import * as S from './styles';
+import Link from 'next/link';
 import Image from 'next/image';
 
 import { ActiveLink } from '~/components';
+
+import * as S from './styles';
 
 export default function Header() {
   return (
     <S.Container>
       <S.Content>
-        <Image
-          width={70}
-          height={33.25}
-          alt="codeDot logo"
-          src="/images/logo.svg"
-        />
+        <Link href="/">
+          <S.Anchor isCentered>
+            <Image
+              width={70}
+              height={33.25}
+              alt="codeDot logo"
+              src="/images/logo.svg"
+            />
+          </S.Anchor>
+        </Link>
 
         <S.Nav>
           <ActiveLink aria-label="Ir para a Home" href="/">

@@ -20,6 +20,12 @@ const anchorModifiers = {
       background: ${theme.colors.secondary};
     }
   `,
+
+  isCentered: () => css`
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  `,
 };
 
 export const Container = styled.div`
@@ -70,8 +76,8 @@ export const Nav = styled.nav`
   `}
 `;
 
-export const Anchor = styled.a<{ isActive?: boolean }>`
-  ${({ theme, isActive }) => css`
+export const Anchor = styled.a<{ isActive?: boolean; isCentered?: boolean }>`
+  ${({ theme, isActive, isCentered }) => css`
     position: relative;
 
     height: ${defaultSpacing};
@@ -100,6 +106,7 @@ export const Anchor = styled.a<{ isActive?: boolean }>`
       line-height: ${theme.spacings.xxlarge};
     }
 
+    ${isCentered && anchorModifiers.isCentered()};
     ${isActive && anchorModifiers.isActive(theme)};
   `}
 `;

@@ -1,5 +1,4 @@
 import Head from 'next/head';
-import Image from 'next/image';
 import { RichText } from 'prismic-dom';
 import { GetStaticPaths, GetStaticProps } from 'next';
 
@@ -9,12 +8,12 @@ import { Header, Title, Banner, DateText } from '~/components';
 import * as S from './slug.styles';
 
 interface ImageData {
+  alt?: string;
+  url?: string;
   dimensions?: {
     width?: number;
     height?: number;
   };
-  alt?: string;
-  url?: string;
 }
 interface Post {
   slug: string;
