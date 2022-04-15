@@ -90,6 +90,11 @@ export const Content = styled.div`
       width: 100%;
     }
 
+    li,
+    ol {
+      list-style: none;
+    }
+
     iframe {
       height: auto;
       width: inherit;
