@@ -45,6 +45,8 @@ export const ContentWrapper = styled.div`
 
 export const Content = styled.div`
   ${({ theme }) => css`
+    margin: 0 auto;
+
     h1 {
       margin: ${theme.spacings.large} 0;
 
