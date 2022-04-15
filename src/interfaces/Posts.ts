@@ -11,6 +11,7 @@ export type PostData = {
   title: string;
   updatedAt: Date;
   excerpt: string;
+  subtitle?: string;
   content?: React.ReactNode;
 };
 export interface PostsProps {

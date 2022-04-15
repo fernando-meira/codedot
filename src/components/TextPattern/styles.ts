@@ -107,3 +107,10 @@ export const Summary = styled.p`
     }
   `}
 `;
+
+export const SpanText = styled.span`
+  ${({ theme }) => css`
+    color: ${theme.colors.secondary};
+    font-size: ${theme.font.sizes.small};
+  `}
+`;

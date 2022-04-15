@@ -1,7 +1,8 @@
 import Link from 'next/link';
 
-import { Summary, DateText, SummaryTitle } from '~/components';
+import { formatDate } from '~/utils';
 import { PostData } from '~/interfaces/Posts';
+import { Summary, DateText, SummaryTitle } from '~/components';
 
 import * as S from './styles';
 
@@ -14,7 +15,7 @@ export default function Post({ post }: PostProps) {
     <S.Container>
       <Link key={post.uid} href={`/posts/${post.slug}`}>
         <a>
-          <DateText>{post.updatedAt}</DateText>
+          <DateText>{formatDate(post.updatedAt)}</DateText>
 
           <SummaryTitle content={post.title} />
 

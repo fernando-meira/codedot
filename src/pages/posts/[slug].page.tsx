@@ -2,6 +2,7 @@ import Head from 'next/head';
 import { RichText } from 'prismic-dom';
 import { GetStaticPaths, GetStaticProps } from 'next';
 
+import { formatDate } from '~/utils';
 import { createClient } from '~/../prismicio';
 import { Header, Title, Banner, DateText } from '~/components';
 
@@ -18,6 +19,7 @@ interface ImageData {
 interface Post {
   slug: string;
   title: string;
+  subtitle: string;
   image?: ImageData;
   content: React.ReactNode;
   updatedAt: string | Date;
@@ -37,7 +39,7 @@ export default function Post({ post }: PostProps) {
       </Head>
 
       <S.Container>
-        {post.image && <Banner title={post.title} image={post.image.url} />}
+        {post.image && <Banner title={post.subtitle} image={post.image.url} />}
 
         <Header />
 
@@ -45,7 +47,7 @@ export default function Post({ post }: PostProps) {
           <Title content={post.title} />
 
           <S.ContentWrapper>
-            <DateText>{post.updatedAt}</DateText>
+            <DateText>{formatDate(post.updatedAt)}</DateText>
 
             <S.Content
               dangerouslySetInnerHTML={{ __html: String(post.content) }}
@@ -85,15 +87,9 @@ export const getStaticProps: GetStaticProps = async ({
       url: response.data.default_image.url ?? undefined,
     },
     title: RichText.asText(response.data.title),
+    subtitle: RichText.asText(response.data.subtitle),
     content: RichText.asHtml(response.data.content),
-    updatedAt: new Date(response.last_publication_date).toLocaleDateString(
-      'pt-BR',
-      {
-        day: '2-digit',
-        month: 'long',
-        year: 'numeric',
-      }
-    ),
+    updatedAt: response.last_publication_date,
   };
 
   return {

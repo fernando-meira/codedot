@@ -35,3 +35,7 @@ export function SummaryTitle({ content }: CommonProps) {
 export function Summary({ content }: CommonProps) {
   return <S.Summary dangerouslySetInnerHTML={{ __html: String(content) }} />;
 }
+
+export function SpanText({ content }: CommonProps) {
+  return <S.SpanText dangerouslySetInnerHTML={{ __html: String(content) }} />;
+}
