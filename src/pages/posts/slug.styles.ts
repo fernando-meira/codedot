@@ -102,5 +102,14 @@ export const Content = styled.div`
 
       aspect-ratio: 16 / 9;
     }
+
+    .inline-code {
+      padding: 0 0.5ch;
+      display: inline-block;
+
+      font-family: monospace;
+      color: ${theme.colors.red[500]};
+      background-color: ${theme.colors.gray[200]};
+    }
   `}
 `;

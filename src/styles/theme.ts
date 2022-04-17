@@ -56,6 +56,10 @@ export default {
     blue: {
       '500': '#1D2433',
     },
+
+    red: {
+      '500': '#EB5757',
+    },
   },
   spacings: {
     xxsmall: '0.8rem',
