@@ -73,6 +73,7 @@ export const Content = styled.div`
 
       text-align: justify;
       line-height: 1.625rem;
+      word-break: break-word;
       color: ${theme.colors.black[500]};
       font-size: ${theme.font.sizes.large};
       line-height: ${theme.font.sizes.xxlarge};
@@ -101,6 +102,17 @@ export const Content = styled.div`
       margin-top: ${theme.spacings.medium};
 
       aspect-ratio: 16 / 9;
+    }
+
+    pre {
+      overflow: auto;
+      margin: 1rem 0 2rem;
+      border: 1px solid transparent;
+      padding: 1rem 2.5rem 1rem 1rem;
+      border-radius: ${theme.border.radius};
+
+      color: ${theme.colors.primary};
+      background-color: ${theme.colors.black[500]};
     }
 
     .inline-code {
