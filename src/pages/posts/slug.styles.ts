@@ -113,6 +113,23 @@ export const Content = styled.div`
 
       color: ${theme.colors.primary};
       background-color: ${theme.colors.black[500]};
+
+      ::-webkit-scrollbar {
+        width: 0.5rem;
+        height: 0.5rem;
+      }
+
+      ::-webkit-scrollbar-track {
+        background: ${theme.colors.black[500]};
+      }
+
+      ::-webkit-scrollbar-thumb {
+        background: ${theme.colors.gray[500]};
+      }
+
+      ::-webkit-scrollbar-thumb:hover {
+        background: ${theme.colors.gray[100]};
+      }
     }
 
     .inline-code {
