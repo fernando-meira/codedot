@@ -6,4 +6,8 @@ describe('checkOccurrences', () => {
       checkOccurrences('a', 'Quantas vezes o valor de a ocorre aqui?')
     ).toBe(5);
   });
+
+  it('should return empty array', () => {
+    expect(checkOccurrences('a', 'Teste')).toBe(0);
+  });
 });
