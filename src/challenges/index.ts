@@ -1,4 +1,5 @@
 export { default as getType } from './getType';
+export { default as cutArray } from './cutArray';
 export { default as evenOrOdd } from './evenOrOdd';
 export { default as returnText } from './returnText';
 export { default as isStrictEqual } from './isStrictEqual';
