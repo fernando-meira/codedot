@@ -1,5 +1,6 @@
 export { default as getType } from './getType';
 export { default as cutArray } from './cutArray';
+export { default as sortItems } from './sortItems';
 export { default as evenOrOdd } from './evenOrOdd';
 export { default as returnText } from './returnText';
 export { default as removeItems } from './removeItems';
