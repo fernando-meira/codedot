@@ -5,7 +5,6 @@ import { createClient } from '~/../prismicio';
 import { PostsProps } from '~/interfaces/Posts';
 import * as S from '~/styles/pages/home.styles';
 import { Header, Title, Subtitle, Post, SectionTitle } from '~/components';
-import { arithmeticOperations } from '~/challenges';
 
 export default function Home({ posts }: PostsProps) {
   return (
