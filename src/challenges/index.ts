@@ -3,6 +3,7 @@ export { default as cutArray } from './cutArray';
 export { default as sortItems } from './sortItems';
 export { default as evenOrOdd } from './evenOrOdd';
 export { default as returnText } from './returnText';
+export { default as concatItems } from './concatItems';
 export { default as removeItems } from './removeItems';
 export { default as isStrictEqual } from './isStrictEqual';
 export { default as handleFullName } from './handleFullName';
