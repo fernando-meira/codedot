@@ -7,5 +7,6 @@ export { default as concatItems } from './concatItems';
 export { default as removeItems } from './removeItems';
 export { default as isStrictEqual } from './isStrictEqual';
 export { default as handleFullName } from './handleFullName';
+export { default as removeArrayItem } from './removeArrayItem';
 export { default as checkOccurrences } from './checkOccurrences';
 export { default as arithmeticOperations } from './arithmeticOperations';
